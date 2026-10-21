@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10172a">
+<title>ألعاب أبو علي | ألعاب الذاكرة والمكافآت</title>
+<style>
+:root{--bg:#0b1020;--panel:#141d33;--panel2:#1a2742;--text:#f4f7ff;--muted:#aab6d3;--gold:#ffd166;--cyan:#65e0d4;--line:#2b3957;--red:#ff8585}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#182748 0%,var(--bg) 58%);font-family:Tahoma,Arial,sans-serif;color:var(--text);min-height:100vh}
+.wrap{max-width:1080px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#f4a261);font-size:28px;box-shadow:0 8px 24px #ffd16622}
+h1{font-size:clamp(22px,4vw,32px);margin:0 0 5px}.sub{color:var(--muted);font-size:14px}.demo{background:#3d2e12;color:#ffe5a3;border:1px solid #795f25;padding:8px 12px;border-radius:999px;font-size:12px}
+.hero{background:linear-gradient(125deg,#1b3154,#17203a 65%,#30254a);border:1px solid var(--line);border-radius:24px;padding:24px;display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:center}
+.hero h2{font-size:clamp(22px,4vw,34px);margin:0 0 10px}.hero p{color:var(--muted);line-height:1.8;margin:0 0 18px}.btn{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:bold;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--gold);color:#251a05}.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.disabled{opacity:.45;cursor:not-allowed}.hero-art{font-size:82px;text-align:center;filter:drop-shadow(0 10px 24px #0005)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 22px}.stat,.card{background:linear-gradient(160deg,#17223a,#11192c);border:1px solid var(--line);border-radius:18px;padding:18px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:8px}.gold{color:var(--gold)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 12px}.section-head h2{font-size:21px;margin:0}.pill{color:var(--cyan);font-size:12px;background:#173a3c;padding:6px 10px;border-radius:999px}
+.game-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.game-card{background:linear-gradient(160deg,#17223a,#11192c);border:1px solid var(--line);border-radius:20px;padding:18px}.game-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.game-top h3{margin:0 0 5px}.board{display:grid;grid-template-columns:repeat(4,minmax(50px,1fr));gap:9px;margin:18px 0}.tile{aspect-ratio:1;border:1px solid #3c4c70;background:linear-gradient(145deg,#26395e,#1a2946);border-radius:13px;color:white;font-size:clamp(20px,4vw,30px);cursor:pointer}.tile.revealed,.tile.matched{background:#203d48;border-color:#4d9e9b}.tile.matched{cursor:default;opacity:.7}.note{font-size:13px;color:var(--muted);line-height:1.8}.status{min-height:24px;color:var(--cyan);font-size:14px}.side h3{margin-top:0}.rule{padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.7}.rule:last-child{border-bottom:0}
+.withdraw-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px;margin:12px 0}.field label{font-size:13px;color:var(--muted)}input,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0d1528;color:var(--text);font:inherit}
+.alert{background:#302715;border:1px solid #6e5728;color:#ffe2a0;border-radius:13px;padding:13px;font-size:13px;line-height:1.8;margin:12px 0}.request-list{padding:0;list-style:none;margin:0}.request-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;gap:12px}.request-list li:last-child{border-bottom:0}.tag{font-size:12px;border-radius:999px;padding:5px 8px;background:#333044;color:#e0d7ff;white-space:nowrap}
+footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.8;padding:30px 10px}
+@media(max-width:760px){.hero,.game-layout,.withdraw-grid{grid-template-columns:1fr}.hero-art{font-size:58px;order:-1}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}.wrap{padding:14px}.board{gap:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="logo">🧠</div><div><h1>ألعاب أبو علي</h1><div class="sub">العب، ركّز، وجرّب تحدّي الذاكرة</div></div></div>
+  <div class="demo">نسخة تجريبية · لا يوجد دفع حقيقي</div>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>اختبر ذاكرتك واربح نقاطاً تجريبية</h2>
+    <p>اقلب البطاقات وطابق الرموز. هذا نموذج أولي لتجربة الألعاب والرصيد وواجهة طلب السحب قبل تفعيل أي خدمة مالية رسمية.</p>
+    <button class="btn primary" onclick="startGame()">ابدأ اللعب الآن ←</button>
+  </div>
+  <div class="hero-art">🎴✨</div>
+</section>
+
+<section class="stats">
+  <div class="stat"><small>رصيد تجريبي</small><strong class="gold"><span id="balance">0</span> نقطة</strong></div>
+  <div class="stat"><small>الأزواج المطابقة</small><strong id="pairs">0 / 8</strong></div>
+  <div class="stat"><small>أفضل نتيجة بهذه الجلسة</small><strong id="best">—</strong></div>
+</section>
+
+<div class="section-head"><h2>🎮 لعبة الذاكرة</h2><span class="pill">مجانية للتجربة</span></div>
+<section class="game-layout" id="game">
+  <div class="game-card">
+    <div class="game-top"><div><h3>طابق الرموز المتشابهة</h3><div class="note">اكشف بطاقتين في كل مرة.</div></div><button class="btn secondary" onclick="startGame()">إعادة اللعبة</button></div>
+    <div class="board" id="board" aria-label="بطاقات لعبة الذاكرة"></div>
+    <div class="status" id="status" aria-live="polite">اضغط «ابدأ اللعب الآن» لبدء جولة جديدة.</div>
+    <div class="note">النقاط هنا تجريبية ومحفوظة على هذا الجهاز فقط. لا تمثل أموالاً حقيقية ولا يمكن سحبها.</div>
+  </div>
+  <aside class="game-card side">
+    <h3>📌 كيف تعمل التجربة؟</h3>
+    <div class="rule">١. ابدأ جولة جديدة من لعبة الذاكرة.</div>
+    <div class="rule">٢. طابق الرموز الثمانية لتحصل على نقاط تجريبية.</div>
+    <div class="rule">٣. الرصيد المعروض للتجربة فقط، وليس له قيمة نقدية.</div>
+    <div class="rule">٤. لا توجد إعلانات مدفوعة أو مدفوعات حقيقية في هذه النسخة.</div>
+  </aside>
+</section>
+
+<div class="section-head"><h2>💳 طلب سحب تجريبي</h2><span class="pill">الدفع معطّل</span></div>
+<section class="withdraw-grid">
+  <div class="card">
+    <h3>طلب سحب إلى شام كاش</h3>
+    <div class="alert">ميزة السحب غير مفعّلة. يمكنك تجربة النموذج فقط؛ لن يتم إرسال أي طلب إلى شام كاش ولن تُحوّل أي أموال.</div>
+    <form id="withdrawForm">
+      <div class="field"><label for="amount">المبلغ التجريبي (ليرة سورية)</label><input id="amount" type="number" min="1000" step="500" placeholder="مثال: 5000" required></div>
+      <div class="field"><label for="wallet">رقم المحفظة التجريبي (لا تدخل بيانات حقيقية)</label><input id="wallet" type="text" maxlength="24" placeholder="مثال تجريبي: 09XXXXXXXX" required></div>
+      <button class="btn secondary disabled" type="submit">الدفع غير مفعّل</button>
+      <p class="note">عند الضغط سيُحفظ طلب تجريبي في المتصفح فقط. لا تدخل رقم محفظتك الحقيقي.</p>
+    </form>
+  </div>
+  <div class="card">
+    <h3>سجل الطلبات التجريبية</h3>
+    <ul class="request-list" id="requests"><li class="note">لا توجد طلبات بعد.</li></ul>
+    <button class="btn secondary" onclick="clearRequests()">مسح الطلبات التجريبية</button>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> ألعاب أبو علي · نموذج أولي تعليمي<br>قبل إطلاق أي مكافآت نقدية، تحقّق من مصادر التمويل وسياسات الإعلانات وشروط شام كاش. لا تستخدم بيانات حقيقية في هذا النموذج.</footer>
+</div>
+<script>
+const emojis = ["🍉","🍋","🍇","🍓","🍒","🥝","🍍","🥥"];
+let deck=[], first=null, lock=false, matched=0, moves=0, score=0, best=0, gameStarted=false;
+const board=document.getElementById("board");
+const balanceEl=document.getElementById("balance");
+const pairsEl=document.getElementById("pairs");
+const statusEl=document.getElementById("status");
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startGame(){
+  deck=shuffle([...emojis,...emojis].map((emoji,index)=>({emoji,id:index,matched:false,shown:false})));
+  first=null;lock=false;matched=0;moves=0;score=0;gameStarted=true;
+  board.innerHTML="";
+  deck.forEach((item,i)=>{
+    const b=document.createElement("button");b.className="tile";b.type="button";b.textContent="？";b.setAttribute("aria-label","بطاقة مخفية");
+    b.addEventListener("click",()=>flip(i,b));board.appendChild(b);
+  });
+  pairsEl.textContent="0 / 8";statusEl.textContent="بالتوفيق! ابحث عن الأزواج المتطابقة.";
+  document.getElementById("game").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function flip(i,button){
+  const card=deck[i];if(!gameStarted||lock||card.matched||card.shown)return;
+  card.shown=true;button.textContent=card.emoji;button.classList.add("revealed");button.setAttribute("aria-label",card.emoji);
+  if(!first){first={i,button};return;}
+  moves++;
+  const a=first;first=null;
+  if(deck[a.i].emoji===card.emoji){
+    deck[a.i].matched=true;card.matched=true;matched++;score+=10;
+    a.button.classList.remove("revealed");button.classList.remove("revealed");
+    a.button.classList.add("matched");button.classList.add("matched");
+    pairsEl.textContent=matched+" / 8";balanceEl.textContent=Number(localStorage.getItem("abuali_demo_points")||0)+10;
+    localStorage.setItem("abuali_demo_points",balanceEl.textContent);
+    statusEl.textContent="أحسنت! +10 نقاط تجريبية.";
+    if(matched===8){best=Math.max(best,score);document.getElementById("best").textContent=best+" نقطة";statusEl.textContent="رائع! أكملت اللعبة خلال "+moves+" محاولة. نقاطك تجريبية فقط.";}
+  }else{
+    lock=true;statusEl.textContent="مو نفس الرمز، جرّب مرة ثانية.";
+    setTimeout(()=>{deck[a.i].shown=false;card.shown=false;a.button.textContent="？";button.textContent="？";a.button.classList.remove("revealed");button.classList.remove("revealed");a.button.setAttribute("aria-label","بطاقة مخفية");button.setAttribute("aria-label","بطاقة مخفية");lock=false;},750);
+  }
+}
+function loadRequests(){
+ const arr=JSON.parse(localStorage.getItem("abuali_demo_requests")||"[]");
+ const ul=document.getElementById("requests");ul.innerHTML="";
+ if(!arr.length){ul.innerHTML='<li class="note">لا توجد طلبات بعد.</li>';return;}
+ arr.slice().reverse().forEach(r=>{const li=document.createElement("li");const left=document.createElement("span");left.textContent=r.amount+" ل.س · "+r.date;const right=document.createElement("span");right.className="tag";right.textContent="تجريبي فقط";li.append(left,right);ul.appendChild(li);});
+}
+document.getElementById("withdrawForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const amount=Number(document.getElementById("amount").value);
+ const wallet=document.getElementById("wallet").value.trim();
+ if(amount<1000||!wallet){alert("أدخل بيانات تجريبية صحيحة.");return;}
+ const arr=JSON.parse(localStorage.getItem("abuali_demo_requests")||"[]");
+ arr.push({amount,date:new Date().toLocaleDateString("ar-SY")});
+ localStorage.setItem("abuali_demo_requests",JSON.stringify(arr));
+ document.getElementById("wallet").value="";document.getElementById("amount").value="";
+ loadRequests();alert("تم تسجيل طلب تجريبي على هذا الجهاز فقط. لم يتم إرسال أي بيانات أو أموال.");
+});
+function clearRequests(){localStorage.removeItem("abuali_demo_requests");loadRequests();}
+balanceEl.textContent=localStorage.getItem("abuali_demo_points")||"0";
+document.getElementById("year").textContent=new Date().getFullYear();
+loadRequests();
+</script>
+</body>
+</html>
