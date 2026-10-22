@@ -142,5 +142,33 @@ balanceEl.textContent=localStorage.getItem("abuali_demo_points")||"0";
 document.getElementById("year").textContent=new Date().getFullYear();
 loadRequests();
 </script>
+
+<!-- بداية لعبة منافسات كرة القدم -->
+<section id="football-game" dir="rtl" style="display:none;background:#10172a;color:white;padding:16px;border-radius:16px;margin:15px 0;font-family:Arial,sans-serif">
+  <h2 style="text-align:center">⚽ منافسات أبو علي</h2>
+  <p style="text-align:center">تحدَّ صديقك في مباراة كرة قدم!</p>
+
+  <div style="background:#198447;border:4px solid white;border-radius:12px;padding:10px;position:relative;text-align:center">
+    <div style="border:2px solid white;padding:12px">
+      <div style="font-size:38px">🔵　🔵　🔵</div>
+      <div style="font-size:38px;margin:22px">🔵　⚽　🔴</div>
+      <div style="font-size:38px">🔴　🔴　🔴</div>
+      <div style="border-top:2px solid white;margin-top:12px;padding-top:8px">ملعب المنافسة</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:15px">
+    <label for="football-entry">نقاط الدخول التجريبية:</label>
+    <select id="football-entry" style="padding:10px;border-radius:8px;margin:8px">
+      <option value="10">10 نقاط</option>
+      <option value="20">20 نقطة</option>
+      <option value="50">50 نقطة</option>
+    </select>
+    <button onclick="alert('هذه معاينة فقط؛ لم يتم خصم أي نقاط.')" style="display:block;width:100%;padding:12px;background:#eab308;color:#111827;border:0;border-radius:8px;font-weight:bold;margin-top:10px">إنشاء منافسة تجريبية</button>
+    <p style="font-size:12px">نسخة تجريبية: اللعب عبر الإنترنت والخصم والجوائز لم تُفعّل بعد.</p>
+    <button onclick="document.getElementById('football-game').style.display='none'" style="padding:10px;border-radius:8px">رجوع</button>
+  </div>
+</section>
+<!-- نهاية لعبة منافسات كرة القدم -->
 </body>
 </html>
